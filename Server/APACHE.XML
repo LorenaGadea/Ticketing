@@ -1,0 +1,12 @@
+<!-- /etc/httpd/conf.d/ --> 
+<VirtualHost *:80>
+  DocumentRoot RUTA_DONDE_ESTÁN_LOS_FICHEROS
+  <Directory RUTA_DONDE_ESTÁN_LOS_FICHEROS>
+    Order deny,allow
+    Options FollowSymLinks
+    Require all granted
+  </Directory>
+
+  ErrorLog RUTA_DONDE_ESTÁN_LOS_FICHEROS/error.log
+  CustomLog RUTA_DONDE_ESTÁN_LOS_FICHEROS/custom.log
+</VirtualHost>
