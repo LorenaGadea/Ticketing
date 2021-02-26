@@ -5,12 +5,18 @@ DROP DATABASE IF EXISTS dbticketing;
 CREATE DATABASE dbticketing;
 USE dbticketing;
 
+/*Esto es porque sí, le hace ilusión que no empiece en 1*/
+create sequence seqID start 1000;
+
+cretae table server(
+	servername character varying primary key;
+);
 
 CREATE TABLE incidencia(
-	id serial primary key,
+	id bigint default nextval('seqId') primary key,
 	prioridad character varying not null,
 	timestamp_creacion timestamp not null default now(),
-	descripcion text not null
+	descripcion text not null,
 	server references server(servername)
 );
 CREATE TABLE estado (
@@ -33,13 +39,11 @@ CREATE TABLE estado_incidencia (
 );
 
 CREATE TABLE usuario (
-	id serial primary key,
+	id serial default nextval('seqId') primary key,
+	nif character varying,
 	usuario character varying,
     email character varying,
-    clave character varying,
-	cargo character varying references cargo(cargo)
+    clave character varying
+	/* cargo character varying references cargo(cargo) */
 );
 
-cretae table server(
-	servername character varying pk;
-);
