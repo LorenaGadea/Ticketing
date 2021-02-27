@@ -8,8 +8,8 @@ USE dbticketing;
 /*Esto es porque sí, le hace ilusión que no empiece en 1*/
 create sequence seqID start 1000;
 
-cretae table server(
-	servername character varying primary key;
+CREATE TABLE server(
+	servername character varying primary key
 );
 
 CREATE TABLE incidencia(
@@ -17,7 +17,7 @@ CREATE TABLE incidencia(
 	prioridad character varying not null,
 	timestamp_creacion timestamp not null default now(),
 	descripcion text not null,
-	server references server(servername),
+	server character varying references server(servername),
 	estado character varying,
 	CHECK (estado='Pendiente' or estado = 'En desarrollo' or estado = 'Resuelta')
 );
