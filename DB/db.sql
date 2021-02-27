@@ -17,12 +17,11 @@ CREATE TABLE incidencia(
 	prioridad character varying not null,
 	timestamp_creacion timestamp not null default now(),
 	descripcion text not null,
-	server references server(servername)
-);
-CREATE TABLE estado (
-	estado character varying primary key,
+	server references server(servername),
+	estado character varying,
 	CHECK (estado='Pendiente' or estado = 'En desarrollo' or estado = 'Resuelta')
 );
+
 
 /*CREATE TABLE proyecto (
 	proyecto character varying primary key
@@ -34,7 +33,7 @@ CREATE TABLE cargo (
 
 CREATE TABLE estado_incidencia (
 	id_incidencia bigint references incidencia(id),
-	estado character varying references estado(estado),
+	estado character varying references incidencia(estado),
 	timestamp_estado timestamp not null default now()
 );
 
