@@ -1,0 +1,8 @@
+ Acerca de Apache:
+- Directorio de configuración en /etc/httpd/
+- No existen los comandos a2ensite/a2dissite que había en Ubuntu
+- Los logs por defecto están en el directorio /var/log/httpd/
+
+Acerca de herramientas para depuración:
+- Para instalar multitail para leer convenientemente los logs:
+       sudo yum install multitail
