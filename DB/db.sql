@@ -43,8 +43,8 @@ CREATE TABLE usuario (
 	id bigint default nextval('seqId') primary key,
 	nif character varying unique,
 	usuario character varying,
-    email character varying,
-    clave character varying
+    email character varying not null,
+    clave character varying not null,
 	/* cargo character varying references cargo(cargo) */
 );
 
