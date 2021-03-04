@@ -1,18 +1,25 @@
 <?php
 class Usuario{
  	private $id;
+    private $nif;
 	private $usuario;
 	private $email;
-	private $cargo;
-	public function construct($usuario,$email,$cargo,$id=null){
+	private $clave;
+    
+	public function __construct($id, $nif, $usuario, $email, $clave){
 		$this->id=$id;
+        $this->nif=$nif;
 		$this->usuario=$usuario;
 		$this->email=$email;
-		$this->cargo=$cargo;
+		$this->clave=$clave;
 	}
+    
 	/* getters */
 	public function getId(){
 		return $this->$id;
+	}
+    public function getNif(){
+		return $this->$nif;
 	}
 	public function getUsuario(){
 		return $this->$usuario;
@@ -20,13 +27,16 @@ class Usuario{
 	public function getEmail(){
 		return $this->$email;
 	}
-	public function getCargo(){
-		return $this->$cargo;
+	public function getClave(){
+		return $this->$clave;
 	}
-	/* setters */
-	/** ¿ es necesario o adecuado este setter ? **/
+	
+    /* setters */
 	public function setId($id){
 	    $this->$id=$id;
+	}
+    public function setNif($nif){
+	    $this->$nif=$nif;
 	}
 	public function setUsuario($usuario){
 		$this->$usuario=$usuario;
@@ -34,8 +44,8 @@ class Usuario{
 	public function setEmail($email){
 		$this->$email=$email;
 	}
-	public function setCargo($cargo){
-		$this->$cargo=$cargo;
+	public function setClave($clave){
+		$this->$clave=$clave;
 	}
 }
 
