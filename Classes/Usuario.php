@@ -16,19 +16,19 @@ class Usuario{
     
 	/* getters */
 	public function getId(){
-		return $this->$id;
+		return $this->id;
 	}
     public function getNif(){
-		return $this->$nif;
+		return $this->nif;
 	}
 	public function getUsuario(){
-		return $this->$usuario;
+		return $this->usuario;
 	}
 	public function getEmail(){
-		return $this->$email;
+		return $this->email;
 	}
 	public function getClave(){
-		return $this->$clave;
+		return $this->clave;
 	}
 	
     /* setters */
