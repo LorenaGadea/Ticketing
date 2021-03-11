@@ -1,7 +1,7 @@
 <?php
 class Incidencia{
 	private $id;
-    priviet $idUsuario;
+    private $idUsuario;
     private $prioridad;
     private $timestampCreacion;
     private $descripcion;
