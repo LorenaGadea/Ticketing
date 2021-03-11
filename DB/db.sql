@@ -12,6 +12,14 @@ CREATE TABLE server(
 	servername character varying primary key
 );
 
+CREATE TABLE usuario (
+	id bigint default nextval('seqId') primary key,
+	nif character varying unique,
+	usuario character varying,
+    email character varying not null,
+    clave character varying not null
+);
+
 CREATE TABLE incidencia(
 	id bigint default nextval('seqId') primary key,
 	id_usuario bigint references usuario(id),
@@ -19,32 +27,14 @@ CREATE TABLE incidencia(
 	timestamp_creacion timestamp not null default now(),
 	descripcion text not null,
 	server character varying references server(servername)	
-)
+);
 	
 
-
-/*CREATE TABLE proyecto (
-	proyecto character varying primary key
-);
-
-CREATE TABLE cargo (
-	cargo character varying primary key
-); */
-
-CREATE TABLE estado_incidencia (
+CREATE TABLE estado_incidencia(
 	id_incidencia bigint references incidencia(id),
 	estado character varying,
 	timestamp_estado timestamp not null default now(),
 	CHECK (estado='Pendiente' or estado = 'En desarrollo' or estado = 'Resuelta')
 );
-);
 
-CREATE TABLE usuario (
-	id bigint default nextval('seqId') primary key,
-	nif character varying unique,
-	usuario character varying,
-    email character varying not null,
-    clave character varying not null,
-	/* cargo character varying references cargo(cargo) */
-);
 
