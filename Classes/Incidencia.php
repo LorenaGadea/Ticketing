@@ -23,7 +23,7 @@ class Incidencia{
 		return $this->idUsuario;
 	}
     public function getPrioridad(){
-		return $this->idPrioridad;
+		return $this->prioridad;
 	}
     public function getTimestampCreacion(){
 		return $this->timestampCreacion;
