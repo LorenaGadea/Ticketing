@@ -11,13 +11,13 @@ class EstadoIncidencia{
 	}
     
     public function getIdIncidencia(){
-		return $this->$idIncidencia;
+		return $this->idIncidencia;
 	}
     public function getEstado(){
-		return $this->$estado;
+		return $this->estado;
 	}
     public function getTimestampEstado(){
-		return $this->$timestampEstado;
+		return $this->timestampEstado;
 	}
     
     public function setIdIncidencia($idIncidencia){

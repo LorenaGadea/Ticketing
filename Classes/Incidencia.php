@@ -17,22 +17,22 @@ class Incidencia{
 	}
     
     public function getId(){
-		return $this->$id;
+		return $this->id;
 	}
     public function getIdUsuario(){
-		return $this->$idUsuario;
+		return $this->idUsuario;
 	}
     public function getPrioridad(){
-		return $this->$idPrioridad;
+		return $this->prioridad;
 	}
     public function getTimestampCreacion(){
-		return $this->$timestampCreacion;
+		return $this->timestampCreacion;
 	}
     public function getDescripcion(){
-		return $this->$descripcion;
+		return $this->descripcion;
 	}
     public function getServer(){
-		return $this->$server;
+		return $this->server;
 	}
     
     
