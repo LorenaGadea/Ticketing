@@ -20,6 +20,31 @@ try{
 	die("Error al conectar a la base de datos:" . $e->getMessage());
 }
 
+function getUsuarioLoginMedianteNifClave($nif,$clave){
+    global $conn;
+	$stmt = $conn->prepare("SELECT id FROM usuario WHERE nif=? AND clave=?");
+	$stmt->execute([$nif,$clave]);
+
+    $idUsuario=null;
+    if($filaUnica = $stmt->fetch(PDO::FETCH_ASSOC)){
+        $idUsuario=$filaUnica["id"];
+    }
+    
+    return getUsuario($idUsuario);
+}
+
+function getUsuario($idUsuario){
+    global $conn;
+    $stmt = $conn->prepare("SELECT * FROM usuario WHERE id=?");
+	$stmt->execute([$idUsuario]);
+
+    $usuario=null;
+    if($filaUnica = $stmt->fetch(PDO::FETCH_ASSOC)){
+        $usuario=new Usuario($filaUnica["id"],$filaUnica["nif"],$filaUnica["usuario"],$filaUnica["email"],$filaUnica["clave"]);
+    }
+    
+    return $usuario;
+}
 
 function getIncidenciasUsuario($idUsuario) {
 	global $conn;
