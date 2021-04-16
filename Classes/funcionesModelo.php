@@ -8,8 +8,7 @@ $port = "5432";
 $user = "postgres";
 $passw = "Dalarna1!";
 $db = "ticketing";
-//$dsn = "pgsql:host=$host;port=$port;dbname=$db;user=$user;password=$passw";
-$dsn = "pgsql:dbname=ticketing;";
+$dsn = "pgsql:host=$host;port=$port;dbname=$db;user=$user;password=$passw";
 
 try{
     // create a PostgreSQL database connection

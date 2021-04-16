@@ -1,0 +1,6 @@
+PostgreSQL viene configurado en CentOS de forma que no se pueda acceder con usuario/contraseña desde una conexión local.
+
+Hay que modificar el fichero pg_hba.conf que se encuentra en:
+
+/var/lib/pgsql/data/pg_hba.conf
+
